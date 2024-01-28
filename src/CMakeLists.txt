@@ -1,8 +1,4 @@
-cmake_minimum_required(VERSION 3.14...3.28)
+add_library(CookieSearchLib CLIParser/CLIParser.cpp)
 
-project(
-  CookieSearch
-  VERSION 1.0
-  LANGUAGES CXX)
-
-add_executable(test main.cpp)
+add_executable(CookieSearch main.cpp)
+target_link_libraries(CookieSearch PRIVATE CookieSearchLib)

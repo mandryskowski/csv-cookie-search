@@ -1,10 +1,3 @@
-cmake_minimum_required(VERSION 3.14...3.28)
-
-project(
-  CookieSearchTest
-  VERSION 1.0
-  LANGUAGES CXX)
-
 include(FetchContent)
   FetchContent_Declare(
     googletest
@@ -15,8 +8,8 @@ include(FetchContent)
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
+
 # Now simply link against gtest or gtest_main as needed. Eg
-add_executable(test UTC/UTCTimestampTest.cpp)
+add_executable(test UTC/UTCTimestampTest.cpp CLIParser/CLIParserTest.cpp)
 target_include_directories(test PRIVATE ../src/)
-target_link_libraries(test gtest_main)
-add_test(NAME example_test COMMAND test)
+target_link_libraries(test CookieSearchLib gtest_main)

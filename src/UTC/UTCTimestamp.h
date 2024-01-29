@@ -4,12 +4,16 @@
 
 class UTCTimestamp {
 public:
-    UTCTimestamp(const std::string& str) {
+    UTCTimestamp(std::string str);
+    UTCTimestamp just_day() const;
 
-    }
-    bool xd() {
-        return true;
-    }
+private:
+    UTCTimestamp(uint64_t epoch_time);
+    uint64_t epoch_time;
+
+    friend bool operator==(const UTCTimestamp& lhs, const UTCTimestamp& rhs);
 };
+
+bool operator==(const UTCTimestamp& lhs, const UTCTimestamp& rhs);
 
 #endif // UTCTIMESTAMP_H

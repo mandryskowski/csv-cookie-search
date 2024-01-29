@@ -10,6 +10,6 @@ FetchContent_MakeAvailable(googletest)
 
 
 # Now simply link against gtest or gtest_main as needed. Eg
-add_executable(test UTC/UTCTimestampTest.cpp CLIParser/CLIParserTest.cpp)
+add_executable(test UTC/UTCTimestampTest.cpp CLIParser/CLIParserTest.cpp IntegrationTest.cpp)
 target_include_directories(test PRIVATE ../src/)
 target_link_libraries(test CookieSearchLib gtest_main)

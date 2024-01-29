@@ -7,6 +7,8 @@
 class CLIParser {
 public:
     CLIParser(int argc, const char** argv, const std::vector<std::string>& required_options = {});
+    
+    // Get the value of a CLI option.
     std::string get_option(const std::string&) const;
 
 private:

@@ -11,6 +11,8 @@ public:
 
     virtual std::vector<std::string>::iterator begin() override;
     virtual std::vector<std::string>::iterator end() override;
+
+    // Extract column information from a line
     virtual std::string extract_from_line(const std::string line, const std::string& column) const override;
 private:
     std::unordered_map<std::string, uint32_t> columns;

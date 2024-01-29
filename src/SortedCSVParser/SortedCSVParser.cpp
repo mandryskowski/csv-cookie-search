@@ -8,6 +8,7 @@
 
 SortedCSVParser::SortedCSVParser(const std::string &filename)
 {
+    // Parse lines
     {
         std::ifstream file(filename);
 
@@ -17,6 +18,7 @@ SortedCSVParser::SortedCSVParser(const std::string &filename)
         }
     }
 
+    // Parse column information
     {
         std::istringstream ss(lines[0]);
         std::string column;

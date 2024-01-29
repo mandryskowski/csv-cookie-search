@@ -23,7 +23,7 @@ TEST(IntegrationTest, WorksForGivenTestCase) {
     
     {
         const char* argv[] = {"./program", "-f", "_integration_test_file.csv", "-d", "2018-12-07"};
-        EXPECT_EQ(cookie_search_cli(sizeof(argv) / sizeof(argv[0]), &argv[0])[0], "4sMM2LxV07bPJzwf");
+        EXPECT_EQ(cookie_search_cli(sizeof(argv) / sizeof(argv[0]), &argv[0])[0], "4sMM2LxV07bPJzwff");
     }
     
 

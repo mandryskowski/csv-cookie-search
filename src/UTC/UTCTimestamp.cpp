@@ -55,11 +55,6 @@ UTCTimestamp UTCTimestamp::just_day() const
     return UTCTimestamp(epoch_time - epoch_time % 86400);
 }
 
-bool operator==(const UTCTimestamp& lhs, const UTCTimestamp& rhs)
-{
-    return lhs.epoch_time == rhs.epoch_time;
-}
-
 UTCTimestamp::UTCTimestamp(uint64_t epoch_time): epoch_time(epoch_time) {}
 
 static void parse_separated(const std::string& str, const std::vector<int*>& format, const char separator) {
@@ -71,4 +66,19 @@ static void parse_separated(const std::string& str, const std::vector<int*>& for
 
         *format[i] = std::stoi(token);
     }
+}
+
+bool operator==(const UTCTimestamp& lhs, const UTCTimestamp& rhs)
+{
+    return lhs.epoch_time == rhs.epoch_time;
+}
+
+bool operator<(const UTCTimestamp &lhs, const UTCTimestamp &rhs)
+{
+    return lhs.epoch_time < rhs.epoch_time;
+}
+
+bool operator<=(const UTCTimestamp &lhs, const UTCTimestamp &rhs)
+{
+    return lhs.epoch_time <= rhs.epoch_time;
 }

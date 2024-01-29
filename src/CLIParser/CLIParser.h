@@ -7,7 +7,7 @@
 class CLIParser {
 public:
     CLIParser(int argc, const char** argv, const std::vector<std::string>& required_options = {});
-    std::string get_option(const std::string&);
+    std::string get_option(const std::string&) const;
 
 private:
 

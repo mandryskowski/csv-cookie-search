@@ -24,7 +24,7 @@ CLIParser::CLIParser(int argc, const char** argv, const std::vector<std::string>
     }
 }
 
-std::string CLIParser::get_option(const std::string &option)
+std::string CLIParser::get_option(const std::string &option) const
 {
-    return parsed_options[option];
+    return parsed_options.at(option);
 }

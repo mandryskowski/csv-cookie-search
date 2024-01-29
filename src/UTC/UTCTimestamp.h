@@ -12,8 +12,12 @@ private:
     uint64_t epoch_time;
 
     friend bool operator==(const UTCTimestamp& lhs, const UTCTimestamp& rhs);
+    friend bool operator<(const UTCTimestamp& lhs, const UTCTimestamp& rhs);
+    friend bool operator<=(const UTCTimestamp& lhs, const UTCTimestamp& rhs);
 };
 
 bool operator==(const UTCTimestamp& lhs, const UTCTimestamp& rhs);
+bool operator<(const UTCTimestamp& lhs, const UTCTimestamp& rhs);
+bool operator<=(const UTCTimestamp& lhs, const UTCTimestamp& rhs);
 
 #endif // UTCTIMESTAMP_H
